@@ -1,4 +1,4 @@
-import { Form, Formik, Field } from 'Formik';
+import { Form, formik, Field } from 'formik';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { useContext, useState } from 'react';
@@ -46,7 +46,7 @@ const PostVisibilty = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
           Visibilty
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             visibleTo: visibilty.length > 0 ? visibilty : [],
@@ -99,7 +99,7 @@ const PostVisibilty = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 import * as Yup from 'yup';
 
 import { useNavigate } from 'react-router-dom';
-import { Formik, Form, Field, ErrorMessage } from 'Formik';
+import { formik, Form, Field, ErrorMessage } from 'formik';
 
 import DefaultLayout from '../../../layout/DefaultLayout';
 import { useQuery } from 'react-query';
@@ -82,7 +82,7 @@ const ConfirmBank: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-stroke sm:text-title-xl2">
           Confirm Bank Transfer
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             referenceNum: '',
@@ -243,7 +243,7 @@ const ConfirmBank: React.FC = () => {
               <SubmitBtn isSubmitting={isSubmitting} title="Bank Transfer" />
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );

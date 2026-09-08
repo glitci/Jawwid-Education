@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../images/logo/logo.png';
 import SigninVector from '../../images/vectors/signinVector.svg';
 import * as Yup from 'yup';
-import { ErrorMessage, Field, Form, Formik } from 'Formik';
+import { ErrorMessage, Field, Form, formik } from 'formik';
 import { showError } from '../../libs/ReactToastify';
 import { AuthBtn } from '../../components/Buttons/AuthBtn';
 
@@ -61,7 +61,7 @@ const ResetPassword: React.FC = () => {
               <div className="mb-9 text-center font-medium text-blue-700 dark:text-white sm:text-title-xl2">
                 First Step: Enter Your Email
               </div>
-              <Formik
+              <formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
@@ -113,7 +113,7 @@ const ResetPassword: React.FC = () => {
                     </div>
                   </Form>
                 )}
-              </Formik>
+              </formik>
             </div>
           </div>
         </div>

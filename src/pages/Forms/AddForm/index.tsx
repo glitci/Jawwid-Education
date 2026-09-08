@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Formik, Form, Field, ErrorMessage, FieldArray } from 'Formik';
+import { formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 
 import { Axios } from '../../../Api/axios';
 
@@ -80,7 +80,7 @@ const index: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-stroke sm:text-title-xl2">
           {id ? 'Edit Form' : 'Add Form'}
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             name: FormData ? FormData.name : '',
@@ -243,7 +243,7 @@ const index: React.FC = () => {
               <SubmitBtn isSubmitting={isSubmitting} id={id} title="Form" />
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );

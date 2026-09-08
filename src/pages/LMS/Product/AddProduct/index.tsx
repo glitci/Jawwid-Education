@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { createProduct } from '../../../../types/Lms';
 import { PRODUCTS } from '../../../../Api/Api';
 import { Axios } from '../../../../Api/axios';
-import { ErrorMessage, Field, Form, Formik } from 'Formik';
+import { ErrorMessage, Field, Form, formik } from 'formik';
 import * as Yup from 'yup';
 import { SubmitBtn } from '../../../../components/Buttons/SubmitBtn';
 import { showSuccess } from '../../../../libs/ReactToastify';
@@ -72,7 +72,7 @@ const AddProduct = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
           {id ? 'Edit Product' : 'Add Product'}
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             image: '',
@@ -159,7 +159,7 @@ const AddProduct = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );

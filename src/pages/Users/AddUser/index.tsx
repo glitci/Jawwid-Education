@@ -6,7 +6,7 @@ import { Axios } from '../../../Api/axios';
 import { USERS } from '../../../Api/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { showError, showSuccess } from '../../../libs/ReactToastify';
-import { Formik, Form, Field, ErrorMessage } from 'Formik';
+import { formik, Form, Field, ErrorMessage } from 'formik';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 import { SubmitBtn } from '../../../components/Buttons/SubmitBtn';
 import TimezoneSelect, { type ITimezone } from 'react-timezone-select';
@@ -99,7 +99,7 @@ const AddUser: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-stroke sm:text-title-xl2">
           {id ? 'Edit User' : 'Add User'}
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             name: userData ? userData.name : '',
@@ -326,7 +326,7 @@ const AddUser: React.FC = () => {
               <SubmitBtn isSubmitting={isSubmitting} id={id} title="User" />
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </UsersLayout>
   );

@@ -5,7 +5,7 @@ import { Axios } from '../../../Api/axios';
 import { USERS } from '../../../Api/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { showError } from '../../../libs/ReactToastify';
-import { Formik, Form, ErrorMessage } from 'Formik';
+import { formik, Form, ErrorMessage } from 'formik';
 import { SiGoogleclassroom } from 'react-icons/si';
 import Select from 'react-select';
 
@@ -67,7 +67,7 @@ const AdminControls: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black sm:text-title-xl2">
           Change Student's Remaining Classes
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             enabledControls: enabledControls,
@@ -134,7 +134,7 @@ const AdminControls: React.FC = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </UsersLayout>
   );

@@ -5,7 +5,7 @@ import { Axios } from '../../../Api/axios';
 import { PASSWORD, USERS } from '../../../Api/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { showError } from '../../../libs/ReactToastify';
-import { Formik, Form, Field, ErrorMessage } from 'Formik';
+import { formik, Form, Field, ErrorMessage } from 'formik';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 import { AuthBtn } from '../../../components/Buttons/AuthBtn';
 
@@ -45,7 +45,7 @@ const ChangePassword: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
           Change User's Password
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             password: '',
@@ -93,7 +93,7 @@ const ChangePassword: React.FC = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </UsersLayout>
   );

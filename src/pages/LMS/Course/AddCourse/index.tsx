@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DefaultLayout from '../../../../layout/DefaultLayout';
-import { ErrorMessage, Field, Form, Formik } from 'Formik';
+import { ErrorMessage, Field, Form, formik } from 'formik';
 import { createCourse } from '../../../../types/Lms';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -76,7 +76,7 @@ const AddCourse = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
           {id ? 'Edit Course' : 'Add Course'}
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             title: courseData ? courseData.title : '',
@@ -159,7 +159,7 @@ const AddCourse = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );

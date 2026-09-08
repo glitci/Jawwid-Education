@@ -4,7 +4,7 @@ import { Axios } from '../../../Api/axios';
 import { FORMS } from '../../../Api/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { showError, showSuccess } from '../../../libs/ReactToastify';
-import { Formik, Form, Field, ErrorMessage, FieldArray } from 'Formik';
+import { formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 
 import logo from '../../../images/logo/logo.png';
 import { useQuery } from 'react-query';
@@ -79,7 +79,7 @@ const index: React.FC = () => {
               {forms?.data?.form?.name}
             </h2>
           </div>
-          <Formik
+          <formik
             enableReinitialize
             initialValues={{
               userName: '',
@@ -254,7 +254,7 @@ const index: React.FC = () => {
                 )}
               </Form>
             )}
-          </Formik>
+          </formik>
         </div>
       )}
     </>

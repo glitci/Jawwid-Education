@@ -5,7 +5,7 @@ import { Axios } from '../../../Api/axios';
 import { USERS } from '../../../Api/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { showError } from '../../../libs/ReactToastify';
-import { Formik, Form, Field, ErrorMessage } from 'Formik';
+import { formik, Form, Field, ErrorMessage } from 'formik';
 import { SiGoogleclassroom } from 'react-icons/si';
 import { AuthBtn } from '../../../components/Buttons/AuthBtn';
 
@@ -53,7 +53,7 @@ const StudentClasses: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black sm:text-title-xl2">
           Change Student's Remaining Classes
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             remainingClasses: remainingClasses,
@@ -97,7 +97,7 @@ const StudentClasses: React.FC = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </UsersLayout>
   );

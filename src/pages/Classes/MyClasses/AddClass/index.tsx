@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { createClass } from '../../../../types/classes';
 import { Axios } from '../../../../Api/axios';
 import { CLASSES, TRAIL, USERS } from '../../../../Api/Api';
-import { Formik, Form, Field, ErrorMessage } from 'Formik';
+import { formik, Form, Field, ErrorMessage } from 'formik';
 import DefaultLayout from '../../../../layout/DefaultLayout';
 import { useQuery } from 'react-query';
 import {
@@ -110,7 +110,7 @@ const AddClass = () => {
         <h2 className="mb-9 text-2xl font-bold text-black  dark:text-white sm:text-title-xl2">
           Add Class
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             name: '',
@@ -299,7 +299,7 @@ const AddClass = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );

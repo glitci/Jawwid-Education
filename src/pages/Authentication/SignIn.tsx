@@ -5,7 +5,7 @@ import Logo from '../../images/logo/logo.png';
 import SigninVector from '../../images/vectors/signinVector.svg';
 import { LOGIN, baseURL } from '../../Api/Api';
 import * as Yup from 'yup';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Form, formik } from 'formik';
 import Cookie from 'cookie-universal';
 import { showError } from '../../libs/ReactToastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
@@ -82,7 +82,7 @@ const SignIn: React.FC = () => {
               <h2 className="mb-9 text-2xl font-bold text-black  sm:text-title-xl2">
                 Sign In to Dashbaord
               </h2>
-              <Formik
+              <formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
@@ -165,7 +165,7 @@ const SignIn: React.FC = () => {
                     </div>
                   </Form>
                 )}
-              </Formik>
+              </formik>
               <div className="flex justify-evenly">
                 <Link to="/auth/reset-password">Forget Password?</Link>
                 <Link to="/auth/signup"> Register?</Link>

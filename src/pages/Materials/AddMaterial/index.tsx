@@ -6,7 +6,7 @@ import { Axios } from '../../../Api/axios';
 import { MATERIALS } from '../../../Api/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { showError, showSuccess } from '../../../libs/ReactToastify';
-import { Formik, Form, Field, ErrorMessage } from 'Formik';
+import { formik, Form, Field, ErrorMessage } from 'formik';
 import { SubmitBtn } from '../../../components/Buttons/SubmitBtn';
 import { createMaterial } from '../../../types/materials';
 
@@ -66,7 +66,7 @@ const AddMaterial: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-stroke sm:text-title-xl2">
           {id ? 'Edit Material' : 'Add Material'}
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             title: materialData ? materialData.title : '',
@@ -154,7 +154,7 @@ const AddMaterial: React.FC = () => {
               <SubmitBtn isSubmitting={isSubmitting} id={id} title="Material" />
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </UsersLayout>
   );

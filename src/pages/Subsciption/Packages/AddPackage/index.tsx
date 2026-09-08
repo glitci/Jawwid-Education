@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import { useNavigate, useParams } from 'react-router-dom';
 import Select from 'react-select';
-import { Formik, Form, Field, ErrorMessage, FieldArray } from 'Formik';
+import { formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 
 import { Axios } from '../../../../Api/axios';
 import { PACKAGES, USERS } from '../../../../Api/Api';
@@ -96,7 +96,7 @@ const AddPackage: React.FC = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-stroke sm:text-title-xl2">
           {id ? 'Edit Package' : 'Add Package'}
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             title: packageData ? packageData.title : '',
@@ -260,7 +260,7 @@ const AddPackage: React.FC = () => {
               <SubmitBtn isSubmitting={isSubmitting} id={id} title="Package" />
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );

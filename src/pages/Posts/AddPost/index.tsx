@@ -5,7 +5,7 @@ import { createPost } from '../../../types/posts';
 import * as Yup from 'yup';
 import { Axios } from '../../../Api/axios';
 import { POSTS } from '../../../Api/Api';
-import { ErrorMessage, Field, Form, Formik } from 'Formik';
+import { ErrorMessage, Field, Form, formik } from 'formik';
 import { SubmitBtn } from '../../../components/Buttons/SubmitBtn';
 import { UserContext } from '../../../Context/loggedInUser';
 import _403 from '../../../components/Errors/403';
@@ -166,7 +166,7 @@ const AddPost = () => {
           <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-content-xl2">
             {id ? 'Edit Post' : 'Add Post'}
           </h2>
-          <Formik
+          <formik
             enableReinitialize
             initialValues={{
               author: postsData ? postsData.author : '',
@@ -327,7 +327,7 @@ const AddPost = () => {
                 <SubmitBtn isSubmitting={isSubmitting} id={id} title="Post" />
               </Form>
             )}
-          </Formik>
+          </formik>
         </div>
       ) : (
         <_403 />

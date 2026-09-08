@@ -9,7 +9,7 @@ import {
   UPDATE_LOGGEDIN_USER_PASSWAORD,
 } from '../../../Api/Api';
 import { showError, showSuccess } from '../../../libs/ReactToastify';
-import { Formik, Form, Field, ErrorMessage } from 'Formik';
+import { formik, Form, Field, ErrorMessage } from 'formik';
 import { FaEye, FaEyeSlash, FaUpload } from 'react-icons/fa6';
 import { AuthBtn } from '../../../components/Buttons/AuthBtn';
 import { UserContext } from '../../../Context/loggedInUser';
@@ -117,7 +117,7 @@ const Profile: React.FC = () => {
             In This Section, You Can Update Your Information Like: Name, Email,
             And Phone Number
           </h5>
-          <Formik
+          <formik
             enableReinitialize
             initialValues={{
               name: loggedInUser?.name || '',
@@ -250,14 +250,14 @@ const Profile: React.FC = () => {
                 </div>
               </Form>
             )}
-          </Formik>
+          </formik>
         </div>
 
         <div className="bg-white dark:bg-boxdark px-4 py-3 rounded shadow mb-3">
           <h5 className="mb-9 font-bold text-grey-900 ">
             In This Section, You Can Update Your Password
           </h5>
-          <Formik
+          <formik
             initialValues={{
               currentPassword: '',
               newPassword: '',
@@ -331,7 +331,7 @@ const Profile: React.FC = () => {
                 </div>
               </Form>
             )}
-          </Formik>
+          </formik>
         </div>
 
         <div className="bg-white dark:bg-boxdark px-4 py-3 rounded shadow">

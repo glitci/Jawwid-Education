@@ -1,5 +1,5 @@
 import DefaultLayout from '../../../../layout/DefaultLayout';
-import { Form, Formik } from 'Formik';
+import { Form, formik } from 'formik';
 import Select from 'react-select';
 import { useNavigate, useParams } from 'react-router-dom';
 import { COURSES, USERS } from '../../../../Api/Api';
@@ -61,7 +61,7 @@ const AddStudent = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
           Add Student
         </h2>
-        <Formik
+        <formik
           enableReinitialize
           initialValues={{
             studentIds: students,
@@ -113,7 +113,7 @@ const AddStudent = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </formik>
       </div>
     </DefaultLayout>
   );
