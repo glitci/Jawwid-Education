@@ -1,0 +1,31 @@
+import { ImageGrid } from 'react-fb-image-video-grid';
+
+const Image = ({ count, images }: { count: number; images: string[] }) => {
+  console.log(images);
+  const pic = (c: string, i: any) => {
+    return (
+      <img
+        style={{ objectFit: 'cover' }}
+        src={c}
+        alt={i}
+        key={Math.random(i)}
+      />
+    );
+  };
+
+  return (
+    <>
+      {count >= 2 ? (
+        <ImageGrid>
+          {images
+            .filter((arg, i) => (i + 1 <= count ? true : false))
+            .map((a) => pic(a))}
+        </ImageGrid>
+      ) : (
+        <ImageGrid>{pic(images[0])}</ImageGrid>
+      )}
+    </>
+  );
+};
+
+export default Image;
