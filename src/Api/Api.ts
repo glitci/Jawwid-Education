@@ -1,5 +1,5 @@
-export const baseURL = 'https://api.jawwid.com/api/v1';
-export const baseSocketURL = 'https://api.jawwid.com/';
+export const baseURL = 'https://courses-website-t4cr.onrender.com/api/v1';
+export const baseSocketURL = 'https://courses-website-t4cr.onrender.com/';
 
 // Auth
 export const SIGNUP = 'auth/signup';
