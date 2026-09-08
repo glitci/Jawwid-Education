@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { createClass } from '../../../../types/classes';
 import { Axios } from '../../../../Api/axios';
 import { CLASSES, MULTI, TRAIL, USERS } from '../../../../Api/Api';
-import { formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import DefaultLayout from '../../../../layout/DefaultLayout';
 import { useQuery } from 'react-query';
 import {
@@ -124,7 +124,7 @@ const AddMultiClasses = () => {
         <h2 className="mb-9 text-2xl font-bold text-black  dark:text-white sm:text-title-xl2">
           Add Class
         </h2>
-        <formik
+        <Formik
           enableReinitialize
           initialValues={{
             classes: [
@@ -356,7 +356,7 @@ const AddMultiClasses = () => {
               </div>
             </Form>
           )}
-        </formik>
+        </Formik>
       </div>
     </DefaultLayout>
   );

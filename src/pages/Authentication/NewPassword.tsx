@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Logo from '../../images/logo/logo.png';
 import SigninVector from '../../images/vectors/signinVector.svg';
 import * as Yup from 'yup';
-import { ErrorMessage, Field, Form, formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { RESET_PASSWORD, baseURL } from '../../Api/Api';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookie from 'cookie-universal';
@@ -67,7 +67,7 @@ const NewPassword: React.FC = () => {
               <div className="mb-9 text-center font-medium text-blue-700 dark:text-white sm:text-title-xl2">
                 Third Step: Enter Your New Password
               </div>
-              <formik
+              <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
@@ -150,7 +150,7 @@ const NewPassword: React.FC = () => {
                     </div>
                   </Form>
                 )}
-              </formik>
+              </Formik>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { MONTHLY_REPORT, STUDENTS_OF_TEACHER, USERS } from '../../../Api/Api';
 import { Axios } from '../../../Api/axios';
 import DefaultLayout from '../../../layout/DefaultLayout';
 import * as Yup from 'yup';
-import { formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { SubmitBtn } from '../../../components/Buttons/SubmitBtn';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useContext } from 'react';
@@ -95,7 +95,7 @@ const AddReport = () => {
         <h2 className="mb-9 text-2xl font-extrabold text-black dark:text-white sm:text-content-xl2">
           Add Monthly Report :
         </h2>
-        <formik
+        <Formik
           initialValues={{
             student: '',
             month: '',
@@ -190,7 +190,7 @@ const AddReport = () => {
               />
             </Form>
           )}
-        </formik>
+        </Formik>
       </div>
     </DefaultLayout>
   );

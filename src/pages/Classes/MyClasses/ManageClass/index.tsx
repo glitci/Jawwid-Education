@@ -1,5 +1,5 @@
 import DefaultLayout from '../../../../layout/DefaultLayout';
-import { Form, formik, Field, ErrorMessage } from 'formik';
+import { Form, Formik, Field, ErrorMessage } from 'formik';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CLASSES } from '../../../../Api/Api';
 import { Axios } from '../../../../Api/axios';
@@ -110,7 +110,7 @@ const ManageClass = () => {
             Teacher : {classData?.data.data.teacher.name}
           </h2>
         </div>
-        <formik
+        <Formik
           enableReinitialize
           validationSchema={validationSchema}
           initialValues={{
@@ -219,7 +219,7 @@ const ManageClass = () => {
               )}
             </Form>
           )}
-        </formik>
+        </Formik>
       </div>
     </DefaultLayout>
   );

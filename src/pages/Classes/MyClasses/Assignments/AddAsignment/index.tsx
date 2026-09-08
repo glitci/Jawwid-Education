@@ -1,5 +1,5 @@
 import DefaultLayout from '../../../../../layout/DefaultLayout';
-import { Form, formik, Field } from 'formik';
+import { Form, Formik, Field } from 'formik';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ASSIGNMENTS, CLASSES } from '../../../../../Api/Api';
 import { Axios } from '../../../../../Api/axios';
@@ -54,7 +54,7 @@ const AddAsignments = () => {
         <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
           Add Assignment
         </h2>
-        <formik
+        <Formik
           enableReinitialize
           initialValues={{
             studentId: 'Select Student',
@@ -102,7 +102,7 @@ const AddAsignments = () => {
               </div>
             </Form>
           )}
-        </formik>
+        </Formik>
       </div>
     </DefaultLayout>
   );

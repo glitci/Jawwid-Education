@@ -5,7 +5,7 @@ import Logo from '../../images/logo/logo.png';
 import SigninVector from '../../images/vectors/signinVector.svg';
 import { SIGNUP, baseURL } from '../../Api/Api';
 import * as Yup from 'yup';
-import { formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Cookie from 'cookie-universal';
 import { showError } from '../../libs/ReactToastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
@@ -87,7 +87,7 @@ const SignUp: React.FC = () => {
               <h2 className="mb-9 text-2xl font-bold text-black sm:text-title-xl2">
                 Sign Up to Dashbaord
               </h2>
-              <formik
+              <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
@@ -204,7 +204,7 @@ const SignUp: React.FC = () => {
                     </div>
                   </Form>
                 )}
-              </formik>
+              </Formik>
             </div>
           </div>
         </div>

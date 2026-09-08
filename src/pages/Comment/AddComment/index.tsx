@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { createComment } from '../../../types/comments';
 import { Axios } from '../../../Api/axios';
 import * as Yup from 'yup';
-import { ErrorMessage, Field, Form, formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { COMMENTS } from '../../../Api/Api';
 import { SubmitBtn } from '../../../components/Buttons/SubmitBtn';
 import { UserContext } from '../../../Context/loggedInUser';
@@ -88,7 +88,7 @@ const AddComment = () => {
           <h2 className="mb-9 text-2xl font-bold text-black  dark:text-white sm:text-content-xl2">
             {commentId ? 'Edit Comment' : 'Add Comment'}
           </h2>
-          <formik
+          <Formik
             enableReinitialize
             initialValues={{
               content: postsData ? postsData.content : '',
@@ -136,7 +136,7 @@ const AddComment = () => {
                 />
               </Form>
             )}
-          </formik>
+          </Formik>
         </div>
       ) : (
         <_403 />

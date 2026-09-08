@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from '../../images/logo/logo.png';
 import SigninVector from '../../images/vectors/signinVector.svg';
 import * as Yup from 'yup';
-import { ErrorMessage, Field, Form, formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { VERIFY_PASSWORD, baseURL } from '../../Api/Api';
 import { Link, useNavigate } from 'react-router-dom';
 import { showError } from '../../libs/ReactToastify';
@@ -57,7 +57,7 @@ const VerifyReset: React.FC = () => {
               <div className="mb-9 text-center font-medium text-blue-700 dark:text-white sm:text-title-xl2">
                 Second Step: Enter Code ...
               </div>
-              <formik
+              <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
@@ -109,7 +109,7 @@ const VerifyReset: React.FC = () => {
                     </div>
                   </Form>
                 )}
-              </formik>
+              </Formik>
             </div>
           </div>
         </div>
