@@ -5,7 +5,7 @@ import Logo from '../../images/logo/logo.png';
 import SigninVector from '../../images/vectors/signinVector.svg';
 import { LOGIN, baseURL } from '../../Api/Api';
 import * as Yup from 'yup';
-import { ErrorMessage, Field, Form, Formik } from 'Formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import Cookie from 'cookie-universal';
 import { showError } from '../../libs/ReactToastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
